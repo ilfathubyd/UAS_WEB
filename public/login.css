@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(120deg, #0099ff, #fff);
+    min-height: 100vh;
+    overflow: hidden;
+    background-size: cover;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.log {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+h2 {
+    text-align: center;
+    padding: 0 0 20px 0;
+    margin-top: 50px;
+    font-size: 40px;
+    font-weight: lighter;
+}
+
+h2:nth-child(1) {
+    color: transparent;
+    -webkit-text-stroke: 1px #000;
+}
+
+.log form {
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+form .field {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.field input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+.field label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.field span::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #0099ff;
+    transition: 0.5s;
+}
+
+.field input:focus ~ label,
+.field input:valid ~ label {
+    top: -5px;
+    color: #0099ff;
+}
+
+.field input:focus ~ span::before,
+.field input:valid ~ span::before {
+    width: 100%;
+    color: #0099ff;
+}
+
+#toggle {
+    position: absolute;
+    top: 20px;
+    transform: translateY(-50%);
+    right: 15px;
+    background: url("/img/open.png");
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+#toggle.hide {
+    background: url("/img/lock.png");
+    background-size: cover;
+}
